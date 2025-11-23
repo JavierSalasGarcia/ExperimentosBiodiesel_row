@@ -1,0 +1,41 @@
+{
+  "experimento": "Experimento 1",
+  "fecha": "2025-10-03",
+  "fuente": "/home/user/ExperimentosBiodiesel_row/Experimento1/Cromatograma/cromatogramaExperimento1.xlsx",
+  "tipo": "Transesterificación con CaO",
+  "condiciones": {
+    "aceite_ml": 100,
+    "metanol_ml": 25.51,
+    "catalizador": "CaO 1%",
+    "temperatura": "50-55°C",
+    "rpm": "100-600",
+    "duracion_min": 120,
+    "relacion_molar": "6:1"
+  },
+  "muestras": [
+    {
+      "nombre": "2.1",
+      "archivo_csv": "Experimento1/muestra_2_1_raw.csv"
+    },
+    {
+      "nombre": "3.1",
+      "archivo_csv": "Experimento1/muestra_3_1_raw.csv"
+    },
+    {
+      "nombre": "5.1",
+      "archivo_csv": "Experimento1/muestra_5_1_raw.csv"
+    },
+    {
+      "nombre": "6.1",
+      "archivo_csv": "Experimento1/muestra_6_1_raw.csv"
+    },
+    {
+      "nombre": "9.1",
+      "archivo_csv": "Experimento1/muestra_9_1_raw.csv"
+    },
+    {
+      "nombre": "12.1",
+      "archivo_csv": "Experimento1/muestra_12_1_raw.csv"
+    }
+  ]
+}
