@@ -219,7 +219,6 @@ class ProcesadorCromatogramas:
         self.procesar_experimento('Experimento1', 1)
         self.procesar_experimento('Experimento2', 2)
         self.procesar_experimento('Experimento3', 3)
-        self.procesar_experimento('Experimento4', 4)
 
         # Guardar resultados consolidados
         output_file = self.procesados_dir / 'resultados_consolidados.json'
@@ -262,30 +261,21 @@ class ProcesadorCromatogramas:
 
         return df
 
-    def comparar_reproducibilidad(self):
-        """Compara reproducibilidad entre Experimento 1 y 3"""
-        if 'Experimento1' not in self.resultados or 'Experimento3' not in self.resultados:
-            print("\nNo se pueden comparar experimentos (faltan datos)")
-            return
-
-        exp1 = self.resultados['Experimento1']
-        exp3 = self.resultados['Experimento3']
-
+    def generar_resumen_final(self):
+        """Genera un resumen final de todos los experimentos"""
         print("\n" + "=" * 80)
-        print("ANÁLISIS DE REPRODUCIBILIDAD (Experimento 1 vs Experimento 3)")
+        print("RESUMEN DE TODOS LOS EXPERIMENTOS")
         print("=" * 80)
 
-        print(f"\nExperimento 1 ({exp1['fecha']}):")
-        print(f"  Conversión promedio: {exp1['estadisticas']['conversion_promedio']:.2f}% ± {exp1['estadisticas']['conversion_std']:.2f}%")
-        print(f"  Pureza promedio: {exp1['estadisticas']['pureza_promedio']:.2f}% ± {exp1['estadisticas']['pureza_std']:.2f}%")
-
-        print(f"\nExperimento 3 ({exp3['fecha']}):")
-        print(f"  Conversión promedio: {exp3['estadisticas']['conversion_promedio']:.2f}% ± {exp3['estadisticas']['conversion_std']:.2f}%")
-        print(f"  Pureza promedio: {exp3['estadisticas']['pureza_promedio']:.2f}% ± {exp3['estadisticas']['pureza_std']:.2f}%")
-
-        # Calcular coeficiente de variación
-        cv_conv = (exp1['estadisticas']['conversion_std'] / exp1['estadisticas']['conversion_promedio']) * 100
-        print(f"\nCoeficiente de variación (Experimento 1): {cv_conv:.2f}%")
+        for exp_name in ['Experimento1', 'Experimento2', 'Experimento3']:
+            if exp_name in self.resultados:
+                exp = self.resultados[exp_name]
+                print(f"\n{exp['experimento']} ({exp['fecha']}):")
+                print(f"  Muestras analizadas: {len(exp['muestras'])}")
+                if 'estadisticas' in exp:
+                    print(f"  Conversión promedio: {exp['estadisticas']['conversion_promedio']:.2f}% ± {exp['estadisticas']['conversion_std']:.2f}%")
+                    print(f"  Pureza promedio: {exp['estadisticas']['pureza_promedio']:.2f}% ± {exp['estadisticas']['pureza_std']:.2f}%")
+                    print(f"  Coeficiente de variación: {(exp['estadisticas']['conversion_std'] / exp['estadisticas']['conversion_promedio'] * 100):.2f}%")
 
 if __name__ == '__main__':
     procesados_dir = '/home/user/ExperimentosBiodiesel_row/Procesados'
@@ -293,4 +283,4 @@ if __name__ == '__main__':
 
     procesador.procesar_todos_experimentos()
     procesador.generar_tabla_resumen()
-    procesador.comparar_reproducibilidad()
+    procesador.generar_resumen_final()

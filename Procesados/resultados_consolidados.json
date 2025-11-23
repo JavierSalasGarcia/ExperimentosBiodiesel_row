@@ -208,116 +208,12 @@
     }
   },
   "Experimento3": {
-    "experimento": "MORAN RXN 1 (Repetición)",
-    "fecha": "2025-10-24",
-    "muestras": [
-      {
-        "nombre": "12_1",
-        "archivo": "/home/user/ExperimentosBiodiesel_row/Procesados/Experimento3/muestra_12_1_raw.csv",
-        "conversion_fames_pct": 99.23223370022758,
-        "pureza_biodiesel_pct": 35.40058906303959,
-        "gliceridos": {
-          "monogliceridos_pct": 88.58233453843035,
-          "digliceridos_pct": 84.56534765813062,
-          "trigliceridos_pct": 7.93246400039281
-        },
-        "area_heptano": 2378179.9,
-        "area_fames": 1802724.7999999998,
-        "num_picos_total": 53,
-        "num_picos_fames": 39
-      },
-      {
-        "nombre": "2_12",
-        "archivo": "/home/user/ExperimentosBiodiesel_row/Procesados/Experimento3/muestra_2_12_raw.csv",
-        "conversion_fames_pct": 96.8308234807766,
-        "pureza_biodiesel_pct": 41.5148588256405,
-        "gliceridos": {
-          "monogliceridos_pct": 82.58605844322109,
-          "digliceridos_pct": 47.47970968664854,
-          "trigliceridos_pct": 6.347182353416294
-        },
-        "area_heptano": 3535901.2,
-        "area_fames": 282947.80000000016,
-        "num_picos_total": 55,
-        "num_picos_fames": 39
-      },
-      {
-        "nombre": "3_1",
-        "archivo": "/home/user/ExperimentosBiodiesel_row/Procesados/Experimento3/muestra_3_1_raw.csv",
-        "conversion_fames_pct": 98.01320787185172,
-        "pureza_biodiesel_pct": 37.97426891280163,
-        "gliceridos": {
-          "monogliceridos_pct": 85.20600722076878,
-          "digliceridos_pct": 67.24047920101019,
-          "trigliceridos_pct": 7.6445712471080745
-        },
-        "area_heptano": 2631704.3,
-        "area_fames": 471607.80000000005,
-        "num_picos_total": 55,
-        "num_picos_fames": 41
-      },
-      {
-        "nombre": "5_1",
-        "archivo": "/home/user/ExperimentosBiodiesel_row/Procesados/Experimento3/muestra_5_1_raw.csv",
-        "conversion_fames_pct": 99.28933955477045,
-        "pureza_biodiesel_pct": 35.34481422808244,
-        "gliceridos": {
-          "monogliceridos_pct": 87.93303735871045,
-          "digliceridos_pct": 85.49288907823733,
-          "trigliceridos_pct": 8.201020380731585
-        },
-        "area_heptano": 1882359.4,
-        "area_fames": 2230802.3,
-        "num_picos_total": 50,
-        "num_picos_fames": 34
-      },
-      {
-        "nombre": "6_1",
-        "archivo": "/home/user/ExperimentosBiodiesel_row/Procesados/Experimento3/muestra_6_1_raw.csv",
-        "conversion_fames_pct": 99.33281943688523,
-        "pureza_biodiesel_pct": 35.251432660656725,
-        "gliceridos": {
-          "monogliceridos_pct": 88.90489020834943,
-          "digliceridos_pct": 85.26214203064758,
-          "trigliceridos_pct": 8.283928271728781
-        },
-        "area_heptano": 2547359.1,
-        "area_fames": 1983319.7000000002,
-        "num_picos_total": 50,
-        "num_picos_fames": 34
-      },
-      {
-        "nombre": "9_1",
-        "archivo": "/home/user/ExperimentosBiodiesel_row/Procesados/Experimento3/muestra_9_1_raw.csv",
-        "conversion_fames_pct": 99.21028839609518,
-        "pureza_biodiesel_pct": 35.330133047545665,
-        "gliceridos": {
-          "monogliceridos_pct": 88.55653854111924,
-          "digliceridos_pct": 84.74377118220428,
-          "trigliceridos_pct": 8.29867101801293
-        },
-        "area_heptano": 2687147.7,
-        "area_fames": 1855608.4000000001,
-        "num_picos_total": 51,
-        "num_picos_fames": 35
-      }
-    ],
-    "estadisticas": {
-      "conversion_promedio": 98.65145207343447,
-      "conversion_std": 0.9347737150084126,
-      "conversion_max": 99.33281943688523,
-      "conversion_min": 96.8308234807766,
-      "pureza_promedio": 36.80268278962776,
-      "pureza_std": 2.3181617827064738
-    }
-  },
-  "Experimento4": {
     "experimento": "MORAN Experimento 2",
     "fecha": "2025-11-07",
     "muestras": [
       {
         "nombre": "12_2",
-        "archivo": "/home/user/ExperimentosBiodiesel_row/Procesados/Experimento4/muestra_12_2_raw.csv",
+        "archivo": "/home/user/ExperimentosBiodiesel_row/Procesados/Experimento3/muestra_12_2_raw.csv",
         "conversion_fames_pct": 98.9430049747621,
         "pureza_biodiesel_pct": 35.466495412695814,
         "gliceridos": {
@@ -332,7 +228,7 @@
       },
       {
         "nombre": "6_2",
-        "archivo": "/home/user/ExperimentosBiodiesel_row/Procesados/Experimento4/muestra_6_2_raw.csv",
+        "archivo": "/home/user/ExperimentosBiodiesel_row/Procesados/Experimento3/muestra_6_2_raw.csv",
         "conversion_fames_pct": 98.89251426890334,
         "pureza_biodiesel_pct": 35.48757235383139,
         "gliceridos": {
@@ -347,7 +243,7 @@
       },
       {
         "nombre": "FINAL",
-        "archivo": "/home/user/ExperimentosBiodiesel_row/Procesados/Experimento4/muestra_FINAL_raw.csv",
+        "archivo": "/home/user/ExperimentosBiodiesel_row/Procesados/Experimento3/muestra_FINAL_raw.csv",
         "conversion_fames_pct": 98.86088185835142,
         "pureza_biodiesel_pct": 44.67634333515052,
         "gliceridos": {
@@ -362,7 +258,7 @@
       },
       {
         "nombre": "MITAD",
-        "archivo": "/home/user/ExperimentosBiodiesel_row/Procesados/Experimento4/muestra_MITAD_raw.csv",
+        "archivo": "/home/user/ExperimentosBiodiesel_row/Procesados/Experimento3/muestra_MITAD_raw.csv",
         "conversion_fames_pct": 98.37538393014617,
         "pureza_biodiesel_pct": 51.66652696093244,
         "gliceridos": {
@@ -377,7 +273,7 @@
       },
       {
         "nombre": "RXN10",
-        "archivo": "/home/user/ExperimentosBiodiesel_row/Procesados/Experimento4/muestra_RXN10_raw.csv",
+        "archivo": "/home/user/ExperimentosBiodiesel_row/Procesados/Experimento3/muestra_RXN10_raw.csv",
         "conversion_fames_pct": 98.29804873686119,
         "pureza_biodiesel_pct": 35.802622728005915,
         "gliceridos": {
@@ -392,7 +288,7 @@
       },
       {
         "nombre": "RXN5",
-        "archivo": "/home/user/ExperimentosBiodiesel_row/Procesados/Experimento4/muestra_RXN5_raw.csv",
+        "archivo": "/home/user/ExperimentosBiodiesel_row/Procesados/Experimento3/muestra_RXN5_raw.csv",
         "conversion_fames_pct": 98.78558646064832,
         "pureza_biodiesel_pct": 35.50338857397971,
         "gliceridos": {

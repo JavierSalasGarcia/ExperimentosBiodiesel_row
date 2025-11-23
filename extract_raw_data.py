@@ -117,53 +117,10 @@ class ExtractorDatosCromatogramas:
         print(f"  ✓ Metadata guardada\n")
 
     def extraer_experimento3(self):
-        """Extrae datos del MORAN 24/10/2025 (Repetición)"""
-        print("Extrayendo Experimento 3 (MORAN 24/10/2025)...")
+        """Extrae datos del MORAN 07/11/2025"""
+        print("Extrayendo Experimento 3 (MORAN 07/11/2025)...")
 
         exp3_dir = self.procesados_dir / 'Experimento3'
-        source_file = self.base_dir / '20251024_MORAN 24-10-25/RESULTADOS MORAN RXN 1.xlsx'
-
-        if not source_file.exists():
-            print(f"ERROR: No se encuentra {source_file}")
-            return
-
-        df_dict = pd.read_excel(source_file, sheet_name=None)
-
-        metadata = {
-            'experimento': 'MORAN RXN 1 (Repetición)',
-            'fecha': '2025-10-24',
-            'fuente': str(source_file),
-            'tipo': 'Verificación de reproducibilidad del Experimento 1',
-            'muestras': []
-        }
-
-        for sheet_name in ['2.1(2)', '3.1', '5.1', '6.1', '9.1', '12.1']:
-            if sheet_name in df_dict:
-                df = df_dict[sheet_name]
-
-                # Normalizar nombre para archivo
-                nombre_archivo = sheet_name.replace('.', '_').replace('(', '').replace(')', '')
-                csv_file = exp3_dir / f'muestra_{nombre_archivo}_raw.csv'
-                df.to_csv(csv_file, index=False)
-
-                metadata['muestras'].append({
-                    'nombre': sheet_name,
-                    'archivo_csv': str(csv_file.relative_to(self.procesados_dir))
-                })
-
-                print(f"  ✓ Extraída muestra {sheet_name} -> {csv_file.name}")
-
-        with open(exp3_dir / 'metadata.json', 'w', encoding='utf-8') as f:
-            json.dump(metadata, f, indent=2, ensure_ascii=False)
-
-        self.metadata['Experimento3'] = metadata
-        print(f"  ✓ Metadata guardada\n")
-
-    def extraer_experimento4(self):
-        """Extrae datos del MORAN 07/11/2025"""
-        print("Extrayendo Experimento 4 (MORAN 07/11/2025)...")
-
-        exp4_dir = self.procesados_dir / 'Experimento4'
         source_file = self.base_dir / '20251107_MORAN 7-11-25/2025-11-07 MORAN.XLS'
 
         if not source_file.exists():
@@ -193,7 +150,7 @@ class ExtractorDatosCromatogramas:
             if sheet_name in df_dict:
                 df = df_dict[sheet_name]
 
-                csv_file = exp4_dir / f'{nombre_archivo}_raw.csv'
+                csv_file = exp3_dir / f'{nombre_archivo}_raw.csv'
                 df.to_csv(csv_file, index=False)
 
                 metadata['muestras'].append({
@@ -207,14 +164,14 @@ class ExtractorDatosCromatogramas:
         std_sheet = 'STD INT_07_11_2025 09_45_09 a. m.'
         if std_sheet in df_dict:
             df_std = df_dict[std_sheet]
-            csv_file = exp4_dir / 'estandar_interno_raw.csv'
+            csv_file = exp3_dir / 'estandar_interno_raw.csv'
             df_std.to_csv(csv_file, index=False)
             print(f"  ✓ Extraído estándar interno -> {csv_file.name}")
 
-        with open(exp4_dir / 'metadata.json', 'w', encoding='utf-8') as f:
+        with open(exp3_dir / 'metadata.json', 'w', encoding='utf-8') as f:
             json.dump(metadata, f, indent=2, ensure_ascii=False)
 
-        self.metadata['Experimento4'] = metadata
+        self.metadata['Experimento3'] = metadata
         print(f"  ✓ Metadata guardada\n")
 
     def crear_documentacion(self):
@@ -300,7 +257,6 @@ Consulta el archivo `metadata.json` en cada carpeta para información detallada 
         self.extraer_experimento1()
         self.extraer_experimento2()
         self.extraer_experimento3()
-        self.extraer_experimento4()
 
         self.crear_documentacion()
         self.guardar_metadata_global()

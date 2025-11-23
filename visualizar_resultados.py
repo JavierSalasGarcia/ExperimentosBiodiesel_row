@@ -171,56 +171,68 @@ class VisualizadorResultados:
         print(f"  ✓ Guardado: composicion_muestras.png")
         plt.close()
 
-    def graficar_reproducibilidad(self):
-        """Comparación de reproducibilidad entre Experimento 1 y 3"""
-        print("\nGenerando gráfico de reproducibilidad...")
+    def graficar_comparacion_temporal(self):
+        """Comparación temporal de los 3 experimentos"""
+        print("\nGenerando gráfico de comparación temporal...")
 
-        df_exp1 = self.tabla[self.tabla['Experimento'] == 'Experimento1'].copy()
-        df_exp3 = self.tabla[self.tabla['Experimento'] == 'Experimento3'].copy()
+        fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(14, 10))
 
-        # Ordenar por muestra
-        df_exp1 = df_exp1.sort_values('Muestra')
-        df_exp3 = df_exp3.sort_values('Muestra')
+        # Gráfico 1: Conversión promedio por experimento
+        experimentos = ['Experimento1', 'Experimento2', 'Experimento3']
+        fechas = ['03/10/2025', '20/10/2025', '07/11/2025']
 
-        fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(16, 6))
+        conversiones_promedio = []
+        conversiones_std = []
+        purezas_promedio = []
+        purezas_std = []
 
-        # Gráfico 1: Conversión
-        x = np.arange(len(df_exp1))
-        width = 0.35
+        for exp in experimentos:
+            df_exp = self.tabla[self.tabla['Experimento'] == exp]
+            conversiones_promedio.append(df_exp['Conversión FAMEs (%)'].mean())
+            conversiones_std.append(df_exp['Conversión FAMEs (%)'].std())
+            purezas_promedio.append(df_exp['Pureza (%)'].mean())
+            purezas_std.append(df_exp['Pureza (%)'].std())
 
-        ax1.bar(x - width/2, df_exp1['Conversión FAMEs (%)'], width,
-               label='Experimento 1 (03/10)', color='#3498db', alpha=0.8)
-        ax1.bar(x + width/2, df_exp3['Conversión FAMEs (%)'], width,
-               label='Experimento 3 (24/10)', color='#e74c3c', alpha=0.8)
+        x = np.arange(len(experimentos))
+        width = 0.6
 
-        ax1.set_xlabel('Muestra', fontsize=12)
-        ax1.set_ylabel('Conversión FAMEs (%)', fontsize=12)
-        ax1.set_title('Reproducibilidad: Conversión a Biodiesel',
+        ax1.bar(x, conversiones_promedio, width, yerr=conversiones_std,
+               color=['#3498db', '#e74c3c', '#2ecc71'], alpha=0.7,
+               capsize=5, edgecolor='black')
+        ax1.set_xlabel('Experimento', fontsize=12)
+        ax1.set_ylabel('Conversión FAMEs Promedio (%)', fontsize=12)
+        ax1.set_title('Evolución Temporal de la Conversión entre Experimentos',
                      fontsize=14, fontweight='bold')
         ax1.set_xticks(x)
-        ax1.set_xticklabels(df_exp1['Muestra'])
-        ax1.legend()
+        ax1.set_xticklabels([f'{exp}\n{fecha}' for exp, fecha in zip(experimentos, fechas)])
         ax1.grid(True, axis='y', alpha=0.3)
-        ax1.set_ylim([96, 100])
+        ax1.set_ylim([95, 100])
 
-        # Gráfico 2: Pureza
-        ax2.bar(x - width/2, df_exp1['Pureza (%)'], width,
-               label='Experimento 1 (03/10)', color='#3498db', alpha=0.8)
-        ax2.bar(x + width/2, df_exp3['Pureza (%)'], width,
-               label='Experimento 3 (24/10)', color='#e74c3c', alpha=0.8)
+        # Añadir valores
+        for i, (conv, std) in enumerate(zip(conversiones_promedio, conversiones_std)):
+            ax1.text(i, conv + std + 0.2, f'{conv:.2f}%\n±{std:.2f}',
+                    ha='center', va='bottom', fontsize=10)
 
-        ax2.set_xlabel('Muestra', fontsize=12)
-        ax2.set_ylabel('Pureza (%)', fontsize=12)
-        ax2.set_title('Reproducibilidad: Pureza del Biodiesel',
+        # Gráfico 2: Pureza promedio
+        ax2.bar(x, purezas_promedio, width, yerr=purezas_std,
+               color=['#3498db', '#e74c3c', '#2ecc71'], alpha=0.7,
+               capsize=5, edgecolor='black')
+        ax2.set_xlabel('Experimento', fontsize=12)
+        ax2.set_ylabel('Pureza Promedio (%)', fontsize=12)
+        ax2.set_title('Evolución Temporal de la Pureza entre Experimentos',
                      fontsize=14, fontweight='bold')
         ax2.set_xticks(x)
-        ax2.set_xticklabels(df_exp3['Muestra'])
-        ax2.legend()
+        ax2.set_xticklabels([f'{exp}\n{fecha}' for exp, fecha in zip(experimentos, fechas)])
         ax2.grid(True, axis='y', alpha=0.3)
 
+        # Añadir valores
+        for i, (pur, std) in enumerate(zip(purezas_promedio, purezas_std)):
+            ax2.text(i, pur + std + 0.5, f'{pur:.2f}%\n±{std:.2f}',
+                    ha='center', va='bottom', fontsize=10)
+
         plt.tight_layout()
-        plt.savefig(self.figuras_dir / 'reproducibilidad_exp1_vs_exp3.png', dpi=300, bbox_inches='tight')
-        print(f"  ✓ Guardado: reproducibilidad_exp1_vs_exp3.png")
+        plt.savefig(self.figuras_dir / 'comparacion_temporal.png', dpi=300, bbox_inches='tight')
+        print(f"  ✓ Guardado: comparacion_temporal.png")
         plt.close()
 
     def graficar_estadisticas_globales(self):
@@ -233,8 +245,8 @@ class VisualizadorResultados:
         # 1. Boxplot de conversión por experimento
         ax1 = fig.add_subplot(gs[0, 0])
         data_conv = [self.tabla[self.tabla['Experimento'] == exp]['Conversión FAMEs (%)'].values
-                     for exp in ['Experimento1', 'Experimento2', 'Experimento3', 'Experimento4']]
-        bp1 = ax1.boxplot(data_conv, labels=['Exp1', 'Exp2', 'Exp3', 'Exp4'], patch_artist=True)
+                     for exp in ['Experimento1', 'Experimento2', 'Experimento3']]
+        bp1 = ax1.boxplot(data_conv, tick_labels=['Exp1', 'Exp2', 'Exp3'], patch_artist=True)
         for patch in bp1['boxes']:
             patch.set_facecolor('#3498db')
         ax1.set_ylabel('Conversión FAMEs (%)')
@@ -244,8 +256,8 @@ class VisualizadorResultados:
         # 2. Boxplot de pureza por experimento
         ax2 = fig.add_subplot(gs[0, 1])
         data_pur = [self.tabla[self.tabla['Experimento'] == exp]['Pureza (%)'].values
-                    for exp in ['Experimento1', 'Experimento2', 'Experimento3', 'Experimento4']]
-        bp2 = ax2.boxplot(data_pur, labels=['Exp1', 'Exp2', 'Exp3', 'Exp4'], patch_artist=True)
+                    for exp in ['Experimento1', 'Experimento2', 'Experimento3']]
+        bp2 = ax2.boxplot(data_pur, tick_labels=['Exp1', 'Exp2', 'Exp3'], patch_artist=True)
         for patch in bp2['boxes']:
             patch.set_facecolor('#2ecc71')
         ax2.set_ylabel('Pureza (%)')
@@ -304,7 +316,7 @@ class VisualizadorResultados:
         self.graficar_evolucion_temporal()
         self.graficar_comparacion_experimentos()
         self.graficar_composicion_muestras()
-        self.graficar_reproducibilidad()
+        self.graficar_comparacion_temporal()
         self.graficar_estadisticas_globales()
 
         print("\n" + "=" * 80)

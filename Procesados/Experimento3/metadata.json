@@ -1,32 +1,32 @@
 {
-  "experimento": "MORAN RXN 1 (Repetición)",
-  "fecha": "2025-10-24",
-  "fuente": "/home/user/ExperimentosBiodiesel_row/20251024_MORAN 24-10-25/RESULTADOS MORAN RXN 1.xlsx",
-  "tipo": "Verificación de reproducibilidad del Experimento 1",
+  "experimento": "MORAN Experimento 2",
+  "fecha": "2025-11-07",
+  "fuente": "/home/user/ExperimentosBiodiesel_row/20251107_MORAN 7-11-25/2025-11-07 MORAN.XLS",
+  "tipo": "Nuevas reacciones y puntos de control",
   "muestras": [
     {
-      "nombre": "2.1(2)",
-      "archivo_csv": "Experimento3/muestra_2_12_raw.csv"
+      "nombre": "6.2",
+      "archivo_csv": "Experimento4/muestra_6_2_raw.csv"
     },
     {
-      "nombre": "3.1",
-      "archivo_csv": "Experimento3/muestra_3_1_raw.csv"
+      "nombre": "12.2",
+      "archivo_csv": "Experimento4/muestra_12_2_raw.csv"
     },
     {
-      "nombre": "5.1",
-      "archivo_csv": "Experimento3/muestra_5_1_raw.csv"
+      "nombre": "5_07_11_2025 12_25_25 p. m.",
+      "archivo_csv": "Experimento4/muestra_RXN5_raw.csv"
     },
     {
-      "nombre": "6.1",
-      "archivo_csv": "Experimento3/muestra_6_1_raw.csv"
+      "nombre": "10_07_11_2025 12_52_05 p. m.",
+      "archivo_csv": "Experimento4/muestra_RXN10_raw.csv"
     },
     {
-      "nombre": "9.1",
-      "archivo_csv": "Experimento3/muestra_9_1_raw.csv"
+      "nombre": "MITAD",
+      "archivo_csv": "Experimento4/muestra_MITAD_raw.csv"
     },
     {
-      "nombre": "12.1",
-      "archivo_csv": "Experimento3/muestra_12_1_raw.csv"
+      "nombre": "FINAL",
+      "archivo_csv": "Experimento4/muestra_FINAL_raw.csv"
     }
   ]
 }
