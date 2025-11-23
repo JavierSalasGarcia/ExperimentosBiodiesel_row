@@ -1,0 +1,32 @@
+{
+  "experimento": "MORAN RXN 1 (Repetición)",
+  "fecha": "2025-10-24",
+  "fuente": "/home/user/ExperimentosBiodiesel_row/20251024_MORAN 24-10-25/RESULTADOS MORAN RXN 1.xlsx",
+  "tipo": "Verificación de reproducibilidad del Experimento 1",
+  "muestras": [
+    {
+      "nombre": "2.1(2)",
+      "archivo_csv": "Experimento3/muestra_2_12_raw.csv"
+    },
+    {
+      "nombre": "3.1",
+      "archivo_csv": "Experimento3/muestra_3_1_raw.csv"
+    },
+    {
+      "nombre": "5.1",
+      "archivo_csv": "Experimento3/muestra_5_1_raw.csv"
+    },
+    {
+      "nombre": "6.1",
+      "archivo_csv": "Experimento3/muestra_6_1_raw.csv"
+    },
+    {
+      "nombre": "9.1",
+      "archivo_csv": "Experimento3/muestra_9_1_raw.csv"
+    },
+    {
+      "nombre": "12.1",
+      "archivo_csv": "Experimento3/muestra_12_1_raw.csv"
+    }
+  ]
+}

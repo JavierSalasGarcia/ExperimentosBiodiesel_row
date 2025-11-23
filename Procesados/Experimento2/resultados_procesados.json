@@ -1,0 +1,104 @@
+{
+  "experimento": "MORAN Experimento 1",
+  "fecha": "2025-10-20",
+  "muestras": [
+    {
+      "nombre": "10_1",
+      "archivo": "/home/user/ExperimentosBiodiesel_row/Procesados/Experimento2/muestra_10_1_raw.csv",
+      "conversion_fames_pct": 99.57877400412919,
+      "pureza_biodiesel_pct": 35.75564594459647,
+      "gliceridos": {
+        "monogliceridos_pct": 89.79148233137735,
+        "digliceridos_pct": 81.17643865582977,
+        "trigliceridos_pct": 7.951347411329106
+      },
+      "area_heptano": 4196392.2,
+      "area_fames": 1060264.1,
+      "num_picos_total": 44,
+      "num_picos_fames": 35
+    },
+    {
+      "nombre": "11_1",
+      "archivo": "/home/user/ExperimentosBiodiesel_row/Procesados/Experimento2/muestra_11_1_raw.csv",
+      "conversion_fames_pct": 99.3859059807256,
+      "pureza_biodiesel_pct": 35.28080513350686,
+      "gliceridos": {
+        "monogliceridos_pct": 89.20586084353488,
+        "digliceridos_pct": 84.99722846471397,
+        "trigliceridos_pct": 8.110658686146714
+      },
+      "area_heptano": 2753342.4,
+      "area_fames": 1870790.8,
+      "num_picos_total": 48,
+      "num_picos_fames": 34
+    },
+    {
+      "nombre": "1_1",
+      "archivo": "/home/user/ExperimentosBiodiesel_row/Procesados/Experimento2/muestra_1_1_raw.csv",
+      "conversion_fames_pct": 99.02741865206211,
+      "pureza_biodiesel_pct": 43.57068816353403,
+      "gliceridos": {
+        "monogliceridos_pct": 91.58508814614808,
+        "digliceridos_pct": 33.10728291049265,
+        "trigliceridos_pct": 3.560115259476946
+      },
+      "area_heptano": 3075616.0,
+      "area_fames": 124545.19999999998,
+      "num_picos_total": 39,
+      "num_picos_fames": 33
+    },
+    {
+      "nombre": "8_1",
+      "archivo": "/home/user/ExperimentosBiodiesel_row/Procesados/Experimento2/muestra_8_1_raw.csv",
+      "conversion_fames_pct": 99.38059157595633,
+      "pureza_biodiesel_pct": 35.32184041602102,
+      "gliceridos": {
+        "monogliceridos_pct": 89.01582111877971,
+        "digliceridos_pct": 84.72072505471465,
+        "trigliceridos_pct": 8.240204918571763
+      },
+      "area_heptano": 2383231.0,
+      "area_fames": 1874102.5,
+      "num_picos_total": 55,
+      "num_picos_fames": 37
+    },
+    {
+      "nombre": "SN1",
+      "archivo": "/home/user/ExperimentosBiodiesel_row/Procesados/Experimento2/muestra_SN1_raw.csv",
+      "conversion_fames_pct": 99.33654131984682,
+      "pureza_biodiesel_pct": 35.347457206704554,
+      "gliceridos": {
+        "monogliceridos_pct": 88.9410791542001,
+        "digliceridos_pct": 84.50542400569823,
+        "trigliceridos_pct": 8.24577391289749
+      },
+      "area_heptano": 3167872.2,
+      "area_fames": 1751381.6,
+      "num_picos_total": 47,
+      "num_picos_fames": 34
+    },
+    {
+      "nombre": "SN2",
+      "archivo": "/home/user/ExperimentosBiodiesel_row/Procesados/Experimento2/muestra_SN2_raw.csv",
+      "conversion_fames_pct": 99.19024968692453,
+      "pureza_biodiesel_pct": 36.18532354558416,
+      "gliceridos": {
+        "monogliceridos_pct": 88.2784002947371,
+        "digliceridos_pct": 78.59336649577533,
+        "trigliceridos_pct": 8.055332679246508
+      },
+      "area_heptano": 3429470.7,
+      "area_fames": 1021999.1,
+      "num_picos_total": 50,
+      "num_picos_fames": 38
+    }
+  ],
+  "estadisticas": {
+    "conversion_promedio": 99.3165802032741,
+    "conversion_std": 0.17205684946845198,
+    "conversion_max": 99.57877400412919,
+    "conversion_min": 99.02741865206211,
+    "pureza_promedio": 36.910293401657846,
+    "pureza_std": 2.9955667883896315
+  }
+}

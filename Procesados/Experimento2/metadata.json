@@ -1,0 +1,32 @@
+{
+  "experimento": "MORAN Experimento 1",
+  "fecha": "2025-10-20",
+  "fuente": "/home/user/ExperimentosBiodiesel_row/20251020_MORAN 20-10-25/2025-10-20 MORAN.XLS",
+  "tipo": "Análisis de diferentes condiciones",
+  "muestras": [
+    {
+      "nombre": "1.1",
+      "archivo_csv": "Experimento2/muestra_1_1_raw.csv"
+    },
+    {
+      "nombre": "8.1",
+      "archivo_csv": "Experimento2/muestra_8_1_raw.csv"
+    },
+    {
+      "nombre": "10.1",
+      "archivo_csv": "Experimento2/muestra_10_1_raw.csv"
+    },
+    {
+      "nombre": "11.1",
+      "archivo_csv": "Experimento2/muestra_11_1_raw.csv"
+    },
+    {
+      "nombre": "SN1",
+      "archivo_csv": "Experimento2/muestra_SN1_raw.csv"
+    },
+    {
+      "nombre": "SN2",
+      "archivo_csv": "Experimento2/muestra_SN2_raw.csv"
+    }
+  ]
+}

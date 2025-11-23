@@ -1,0 +1,144 @@
+{
+  "proyecto": "Análisis de Cromatogramas de Biodiesel",
+  "fecha_extraccion": "2025-11-23",
+  "total_experimentos": 4,
+  "experimentos": {
+    "Experimento1": {
+      "experimento": "Experimento 1",
+      "fecha": "2025-10-03",
+      "fuente": "/home/user/ExperimentosBiodiesel_row/Experimento1/Cromatograma/cromatogramaExperimento1.xlsx",
+      "tipo": "Transesterificación con CaO",
+      "condiciones": {
+        "aceite_ml": 100,
+        "metanol_ml": 25.51,
+        "catalizador": "CaO 1%",
+        "temperatura": "50-55°C",
+        "rpm": "100-600",
+        "duracion_min": 120,
+        "relacion_molar": "6:1"
+      },
+      "muestras": [
+        {
+          "nombre": "2.1",
+          "archivo_csv": "Experimento1/muestra_2_1_raw.csv"
+        },
+        {
+          "nombre": "3.1",
+          "archivo_csv": "Experimento1/muestra_3_1_raw.csv"
+        },
+        {
+          "nombre": "5.1",
+          "archivo_csv": "Experimento1/muestra_5_1_raw.csv"
+        },
+        {
+          "nombre": "6.1",
+          "archivo_csv": "Experimento1/muestra_6_1_raw.csv"
+        },
+        {
+          "nombre": "9.1",
+          "archivo_csv": "Experimento1/muestra_9_1_raw.csv"
+        },
+        {
+          "nombre": "12.1",
+          "archivo_csv": "Experimento1/muestra_12_1_raw.csv"
+        }
+      ]
+    },
+    "Experimento2": {
+      "experimento": "MORAN Experimento 1",
+      "fecha": "2025-10-20",
+      "fuente": "/home/user/ExperimentosBiodiesel_row/20251020_MORAN 20-10-25/2025-10-20 MORAN.XLS",
+      "tipo": "Análisis de diferentes condiciones",
+      "muestras": [
+        {
+          "nombre": "1.1",
+          "archivo_csv": "Experimento2/muestra_1_1_raw.csv"
+        },
+        {
+          "nombre": "8.1",
+          "archivo_csv": "Experimento2/muestra_8_1_raw.csv"
+        },
+        {
+          "nombre": "10.1",
+          "archivo_csv": "Experimento2/muestra_10_1_raw.csv"
+        },
+        {
+          "nombre": "11.1",
+          "archivo_csv": "Experimento2/muestra_11_1_raw.csv"
+        },
+        {
+          "nombre": "SN1",
+          "archivo_csv": "Experimento2/muestra_SN1_raw.csv"
+        },
+        {
+          "nombre": "SN2",
+          "archivo_csv": "Experimento2/muestra_SN2_raw.csv"
+        }
+      ]
+    },
+    "Experimento3": {
+      "experimento": "MORAN RXN 1 (Repetición)",
+      "fecha": "2025-10-24",
+      "fuente": "/home/user/ExperimentosBiodiesel_row/20251024_MORAN 24-10-25/RESULTADOS MORAN RXN 1.xlsx",
+      "tipo": "Verificación de reproducibilidad del Experimento 1",
+      "muestras": [
+        {
+          "nombre": "2.1(2)",
+          "archivo_csv": "Experimento3/muestra_2_12_raw.csv"
+        },
+        {
+          "nombre": "3.1",
+          "archivo_csv": "Experimento3/muestra_3_1_raw.csv"
+        },
+        {
+          "nombre": "5.1",
+          "archivo_csv": "Experimento3/muestra_5_1_raw.csv"
+        },
+        {
+          "nombre": "6.1",
+          "archivo_csv": "Experimento3/muestra_6_1_raw.csv"
+        },
+        {
+          "nombre": "9.1",
+          "archivo_csv": "Experimento3/muestra_9_1_raw.csv"
+        },
+        {
+          "nombre": "12.1",
+          "archivo_csv": "Experimento3/muestra_12_1_raw.csv"
+        }
+      ]
+    },
+    "Experimento4": {
+      "experimento": "MORAN Experimento 2",
+      "fecha": "2025-11-07",
+      "fuente": "/home/user/ExperimentosBiodiesel_row/20251107_MORAN 7-11-25/2025-11-07 MORAN.XLS",
+      "tipo": "Nuevas reacciones y puntos de control",
+      "muestras": [
+        {
+          "nombre": "6.2",
+          "archivo_csv": "Experimento4/muestra_6_2_raw.csv"
+        },
+        {
+          "nombre": "12.2",
+          "archivo_csv": "Experimento4/muestra_12_2_raw.csv"
+        },
+        {
+          "nombre": "5_07_11_2025 12_25_25 p. m.",
+          "archivo_csv": "Experimento4/muestra_RXN5_raw.csv"
+        },
+        {
+          "nombre": "10_07_11_2025 12_52_05 p. m.",
+          "archivo_csv": "Experimento4/muestra_RXN10_raw.csv"
+        },
+        {
+          "nombre": "MITAD",
+          "archivo_csv": "Experimento4/muestra_MITAD_raw.csv"
+        },
+        {
+          "nombre": "FINAL",
+          "archivo_csv": "Experimento4/muestra_FINAL_raw.csv"
+        }
+      ]
+    }
+  }
+}
