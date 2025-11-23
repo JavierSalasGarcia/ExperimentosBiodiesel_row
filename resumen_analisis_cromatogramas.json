@@ -1,11 +1,38 @@
 {
-  "total_experimentos": 4,
-  "total_muestras": 24,
+  "total_experimentos": 3,
+  "total_muestras": 18,
   "periodo": "03/10/2025 - 07/11/2025",
+  "nota_nomenclatura": "Se utiliza nomenclatura alfanumérica: E[experimento][muestra]. Ejemplo: E1a = Experimento 1, primera muestra (a); E2c = Experimento 2, tercera muestra (c)",
+  "mapeo_nomenclatura": {
+    "Experimento1": {
+      "2_1": "E1a",
+      "3_1": "E1b",
+      "5_1": "E1c",
+      "6_1": "E1d",
+      "9_1": "E1e",
+      "12_1": "E1f"
+    },
+    "Experimento2": {
+      "1_1": "E2a",
+      "8_1": "E2b",
+      "10_1": "E2c",
+      "11_1": "E2d",
+      "SN1": "E2e",
+      "SN2": "E2f"
+    },
+    "Experimento3": {
+      "RXN5": "E3a",
+      "RXN10": "E3b",
+      "MITAD": "E3c",
+      "FINAL": "E3d",
+      "6_2": "E3e",
+      "12_2": "E3f"
+    }
+  },
   "experimentos": {
     "Experimento_1": {
       "fecha": "2025-10-03",
-      "nombre": "Experimento 1 (Primer experimento de transesterificación)",
+      "nombre": "Experimento 1 (Transesterificación con CaO)",
       "directorio": "Experimento1",
       "condiciones": {
         "aceite_ml": 100,
@@ -20,32 +47,38 @@
       },
       "muestras": [
         {
-          "nombre": "2.1",
+          "nombre_original": "2.1",
+          "nomenclatura_actualizada": "E1a",
           "tiempo": "17:25 (0 min)",
           "tipo": "Inicio de reacción"
         },
         {
-          "nombre": "3.1",
+          "nombre_original": "3.1",
+          "nomenclatura_actualizada": "E1b",
           "tiempo": "17:49 (+24 min)",
           "tipo": "Muestreo intermedio"
         },
         {
-          "nombre": "5.1",
+          "nombre_original": "5.1",
+          "nomenclatura_actualizada": "E1c",
           "tiempo": "18:13 (+48 min)",
           "tipo": "Muestreo intermedio"
         },
         {
-          "nombre": "6.1",
+          "nombre_original": "6.1",
+          "nomenclatura_actualizada": "E1d",
           "tiempo": "18:37 (+72 min)",
           "tipo": "Muestreo intermedio"
         },
         {
-          "nombre": "9.1",
+          "nombre_original": "9.1",
+          "nomenclatura_actualizada": "E1e",
           "tiempo": "19:01 (+96 min)",
           "tipo": "Muestreo intermedio"
         },
         {
-          "nombre": "12.1",
+          "nombre_original": "12.1",
+          "nomenclatura_actualizada": "E1f",
           "tiempo": "19:25 (+120 min)",
           "tipo": "Final de reacción"
         }
@@ -61,44 +94,44 @@
         "Experimento1/Cromatograma/12.1.pdf"
       ]
     },
-    "MORAN_20Oct2025": {
+    "Experimento_2": {
       "fecha": "2025-10-20",
-      "nombre": "MORAN Experimento 1 (20 de octubre)",
+      "nombre": "Experimento 2 (Análisis de diferentes condiciones)",
       "directorio": "20251020_MORAN 20-10-25",
       "condiciones": {
-        "tipo": "Análisis de diferentes condiciones/muestras",
-        "nota": "Diferentes muestras con nomenclatura SN (Sample Note)"
+        "tipo": "Análisis de diferentes condiciones experimentales",
+        "nota": "Diferentes muestras con nomenclatura variada (numeración y SN - Sample Note)"
       },
       "muestras": [
         {
-          "nombre": "1.1",
-          "tipo": "Muestra experimental",
-          "conversion": "96.07%"
+          "nombre_original": "1.1",
+          "nomenclatura_actualizada": "E2a",
+          "tipo": "Muestra experimental"
         },
         {
-          "nombre": "8.1",
-          "tipo": "Muestra experimental",
-          "conversion": "55.83%"
+          "nombre_original": "8.1",
+          "nomenclatura_actualizada": "E2b",
+          "tipo": "Muestra experimental"
         },
         {
-          "nombre": "10.1",
-          "tipo": "Muestra experimental",
-          "conversion": "79.76%"
+          "nombre_original": "10.1",
+          "nomenclatura_actualizada": "E2c",
+          "tipo": "Muestra experimental"
         },
         {
-          "nombre": "11.1",
-          "tipo": "Muestra experimental",
-          "conversion": "59.39%"
+          "nombre_original": "11.1",
+          "nomenclatura_actualizada": "E2d",
+          "tipo": "Muestra experimental"
         },
         {
-          "nombre": "SN1",
-          "tipo": "Sample Note 1",
-          "conversion": "64.24%"
+          "nombre_original": "SN1",
+          "nomenclatura_actualizada": "E2e",
+          "tipo": "Sample Note 1"
         },
         {
-          "nombre": "SN2",
-          "tipo": "Sample Note 2",
-          "conversion": "76.90%"
+          "nombre_original": "SN2",
+          "nomenclatura_actualizada": "E2f",
+          "tipo": "Sample Note 2"
         }
       ],
       "archivos_excel": "20251020_MORAN 20-10-25/2025-10-20 MORAN.XLS",
@@ -111,93 +144,59 @@
         "20251020_MORAN 20-10-25/SN2.pdf"
       ]
     },
-    "MORAN_24Oct2025": {
-      "fecha": "2025-10-24",
-      "nombre": "MORAN RXN 1 (24 de octubre - Repetición del Experimento 1)",
-      "directorio": "20251024_MORAN 24-10-25",
-      "condiciones": {
-        "tipo": "Repetición del Experimento 1",
-        "nota": "Mismas muestras que Experimento 1 para verificar reproducibilidad"
-      },
-      "muestras": [
-        {
-          "nombre": "2.1",
-          "tipo": "Inicio de reacción"
-        },
-        {
-          "nombre": "3.1",
-          "tipo": "Muestreo intermedio"
-        },
-        {
-          "nombre": "5.1",
-          "tipo": "Muestreo intermedio"
-        },
-        {
-          "nombre": "6.1",
-          "tipo": "Muestreo intermedio"
-        },
-        {
-          "nombre": "9.1",
-          "tipo": "Muestreo intermedio"
-        },
-        {
-          "nombre": "12.1",
-          "tipo": "Final de reacción"
-        }
-      ],
-      "archivos_excel": "20251024_MORAN 24-10-25/RESULTADOS MORAN RXN 1.xlsx",
-      "archivos_pdf": [
-        "20251024_MORAN 24-10-25/2.1.pdf",
-        "20251024_MORAN 24-10-25/3.1.pdf",
-        "20251024_MORAN 24-10-25/5.1.pdf",
-        "20251024_MORAN 24-10-25/6.1.pdf",
-        "20251024_MORAN 24-10-25/9.1.pdf",
-        "20251024_MORAN 24-10-25/12.1.pdf"
-      ]
-    },
-    "MORAN_07Nov2025": {
+    "Experimento_3": {
       "fecha": "2025-11-07",
-      "nombre": "MORAN Experimento 2 (7 de noviembre)",
+      "nombre": "Experimento 3 (Nuevas reacciones y puntos de control)",
       "directorio": "20251107_MORAN 7-11-25",
       "condiciones": {
-        "tipo": "Experimento con diferentes puntos de muestreo",
-        "nota": "Incluye muestras repetidas (6.2, 12.2) y nuevas reacciones (RXN 5, RXN 10, MITAD, FINAL)"
+        "tipo": "Experimento con diferentes puntos de muestreo temporal",
+        "nota": "Incluye muestras de reacciones a diferentes tiempos (RXN 5, RXN 10), puntos de control (MITAD, FINAL) y repeticiones (6.2, 12.2)"
       },
       "muestras": [
         {
-          "nombre": "6.2",
-          "tipo": "Repetición de muestra 6"
+          "nombre_original": "RXN5",
+          "nomenclatura_actualizada": "E3a",
+          "tipo": "Reacción a 5 minutos"
         },
         {
-          "nombre": "12.2",
-          "tipo": "Repetición de muestra 12"
+          "nombre_original": "RXN10",
+          "nomenclatura_actualizada": "E3b",
+          "tipo": "Reacción a 10 minutos"
         },
         {
-          "nombre": "RXN 5 (5)",
-          "tipo": "Reacción 5 - tiempo intermedio"
-        },
-        {
-          "nombre": "RXN 10 (10)",
-          "tipo": "Reacción 10 - tiempo avanzado"
-        },
-        {
-          "nombre": "MITAD",
+          "nombre_original": "MITAD",
+          "nomenclatura_actualizada": "E3c",
           "tipo": "Punto medio del experimento"
         },
         {
-          "nombre": "FINAL",
+          "nombre_original": "FINAL",
+          "nomenclatura_actualizada": "E3d",
           "tipo": "Punto final del experimento"
+        },
+        {
+          "nombre_original": "6.2",
+          "nomenclatura_actualizada": "E3e",
+          "tipo": "Repetición de muestra 6 (segunda corrida)"
+        },
+        {
+          "nombre_original": "12.2",
+          "nomenclatura_actualizada": "E3f",
+          "tipo": "Repetición de muestra 12 (segunda corrida)"
         }
       ],
       "archivos_excel": "20251107_MORAN 7-11-25/2025-11-07 MORAN.XLS",
       "archivos_pdf": [
-        "20251107_MORAN 7-11-25/6.2.pdf",
-        "20251107_MORAN 7-11-25/12.2.pdf",
         "20251107_MORAN 7-11-25/RXN 5 (7-11-25).pdf",
         "20251107_MORAN 7-11-25/RXN 10 (7-11-25).pdf",
         "20251107_MORAN 7-11-25/MITAD (7-11-25).pdf",
-        "20251107_MORAN 7-11-25/FINAL (7-11-25).pdf"
+        "20251107_MORAN 7-11-25/FINAL (7-11-25).pdf",
+        "20251107_MORAN 7-11-25/6.2.pdf",
+        "20251107_MORAN 7-11-25/12.2.pdf"
       ]
     }
+  },
+  "notas_adicionales": {
+    "experimento_descartado": "MORAN_24Oct2025 (24/10/2025) fue identificado como duplicado exacto del Experimento 1 y fue excluido del análisis",
+    "cambio_nomenclatura": "Se implementó nomenclatura alfanumérica para facilitar la identificación y trazabilidad de muestras. El formato E[num_exp][letra] permite identificar rápidamente el experimento y el orden cronológico de la muestra dentro del mismo."
   }
 }

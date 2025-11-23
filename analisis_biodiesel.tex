@@ -25,315 +25,317 @@ Producción por Transesterificación de Aceite Usado de Cocina}
 \maketitle
 
 \begin{abstract}
-Este documento presenta un análisis sistemático de datos cromatográficos obtenidos durante la producción de biodiesel mediante transesterificación de aceite usado de cocina con catalizador CaO. Se analizaron 24 muestras distribuidas en 4 experimentos realizados entre octubre y noviembre de 2025. El análisis incluye la caracterización de la conversión de triglicéridos a ésteres metílicos de ácidos grasos (FAMEs), evaluación de la calidad del biodiesel producido y comparación de reproducibilidad entre experimentos.
+Este documento presenta un análisis sistemático de datos cromatográficos obtenidos durante la producción de biodiesel mediante transesterificación de aceite usado de cocina con catalizador CaO. Se analizaron 18 muestras distribuidas en 3 experimentos realizados entre octubre y noviembre de 2025. El análisis incluye la caracterización de la conversión de triglicéridos a ésteres metílicos de ácidos grasos (FAMEs), evaluación de la calidad del biodiesel producido y comparación entre experimentos. Se implementó un sistema de nomenclatura alfanumérica (E1a, E1b, E2a, etc.) para facilitar la identificación y trazabilidad de las muestras.
 \end{abstract}
 
 \tableofcontents
 \newpage
 
+\section{Nomenclatura y Sistema de Identificación}
+
+\subsection{Nomenclatura Actualizada}
+
+Para facilitar la identificación y trazabilidad de las muestras, se implementó un sistema de nomenclatura alfanumérica consistente:
+
+\begin{itemize}
+    \item \textbf{Formato:} E[número\_experimento][letra\_muestra]
+    \item \textbf{Ejemplos:}
+    \begin{itemize}
+        \item E1a: Experimento 1, primera muestra (cronológicamente)
+        \item E1b: Experimento 1, segunda muestra
+        \item E2c: Experimento 2, tercera muestra
+    \end{itemize}
+    \item \textbf{Ventajas:}
+    \begin{itemize}
+        \item Identificación rápida del experimento de origen
+        \item Orden cronológico explícito dentro de cada experimento
+        \item Nomenclatura compacta y fácil de usar en gráficas
+        \item Consistencia entre archivos de datos, scripts y documentación
+    \end{itemize}
+\end{itemize}
+
+\subsection{Tabla de Mapeo}
+
+La Tabla~\ref{tab:mapeo} muestra la correspondencia entre la nomenclatura original de los archivos y la nomenclatura actualizada:
+
+\begin{table}[H]
+\centering
+\caption{Mapeo de nomenclatura original a actualizada}
+\label{tab:mapeo}
+\begin{tabular}{llll}
+\toprule
+\textbf{Experimento} & \textbf{Nombre Original} & \textbf{Nomenclatura} & \textbf{Orden} \\
+\midrule
+Experimento 1 & 2.1 & E1a & 1 \\
+Experimento 1 & 3.1 & E1b & 2 \\
+Experimento 1 & 5.1 & E1c & 3 \\
+Experimento 1 & 6.1 & E1d & 4 \\
+Experimento 1 & 9.1 & E1e & 5 \\
+Experimento 1 & 12.1 & E1f & 6 \\
+\midrule
+Experimento 2 & 1.1 & E2a & 1 \\
+Experimento 2 & 8.1 & E2b & 2 \\
+Experimento 2 & 10.1 & E2c & 3 \\
+Experimento 2 & 11.1 & E2d & 4 \\
+Experimento 2 & SN1 & E2e & 5 \\
+Experimento 2 & SN2 & E2f & 6 \\
+\midrule
+Experimento 3 & RXN5 & E3a & 1 \\
+Experimento 3 & RXN10 & E3b & 2 \\
+Experimento 3 & MITAD & E3c & 3 \\
+Experimento 3 & FINAL & E3d & 4 \\
+Experimento 3 & 6.2 & E3e & 5 \\
+Experimento 3 & 12.2 & E3f & 6 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
 \section{Origen de los Datos}
 
 \subsection{Descripción General}
 
-Los datos analizados en este estudio provienen de cuatro experimentos independientes de producción de biodiesel mediante transesterificación catalítica heterogénea. Todos los análisis fueron realizados mediante Cromatografía de Gases (GC) con detector FID (Flame Ionization Detector), utilizando heptano como estándar interno para cuantificación.
+Los datos analizados provienen de tres experimentos independientes de producción de biodiesel mediante transesterificación catalítica heterogénea. Todos los análisis fueron realizados mediante Cromatografía de Gases (GC) con detector FID, utilizando heptano como estándar interno.
 
-\subsection{Fuentes de Datos}
+\textbf{Nota importante:} Un cuarto experimento realizado el 24/10/2025 fue identificado como duplicado exacto del Experimento 1 mediante análisis de checksums MD5 y comparación numérica, por lo que fue excluido del análisis.
 
-Los datos crudos se extrajeron de los siguientes archivos Excel originales:
+\subsection{Experimentos Analizados}
 
 \subsubsection{Experimento 1 (03/10/2025)}
 
 \begin{itemize}
     \item \textbf{Archivo fuente:} \texttt{Experimento1/Cromatograma/cromatogramaExperimento1.xlsx}
-    \item \textbf{Tipo de experimento:} Reacción de transesterificación inicial
+    \item \textbf{Tipo:} Reacción de transesterificación con monitoreo temporal
     \item \textbf{Condiciones:}
     \begin{itemize}
-        \item Volumen de aceite: 100 mL (91.53 g)
-        \item Volumen de metanol: 25.51 mL
-        \item Catalizador: CaO (1\% p/p)
+        \item Aceite usado de cocina: 100 mL (91.53 g)
+        \item Metanol: 25.51 mL
+        \item Catalizador: CaO 1\% p/p
         \item Temperatura: 50-55°C
         \item Agitación: 100-600 RPM
-        \item Duración total: 120 minutos
-        \item Relación molar metanol:aceite: 6:1
+        \item Duración: 120 minutos
+        \item Relación molar: 6:1
     \end{itemize}
-    \item \textbf{Muestras analizadas:} 6 (2.1, 3.1, 5.1, 6.1, 9.1, 12.1)
+    \item \textbf{Muestras:} 6 (E1a--E1f)
     \item \textbf{Frecuencia de muestreo:} Cada 24 minutos
-    \item \textbf{Archivos CSV generados:}
-    \begin{itemize}
-        \item \texttt{Procesados/Experimento1/muestra\_2\_1\_raw.csv}
-        \item \texttt{Procesados/Experimento1/muestra\_3\_1\_raw.csv}
-        \item \texttt{Procesados/Experimento1/muestra\_5\_1\_raw.csv}
-        \item \texttt{Procesados/Experimento1/muestra\_6\_1\_raw.csv}
-        \item \texttt{Procesados/Experimento1/muestra\_9\_1\_raw.csv}
-        \item \texttt{Procesados/Experimento1/muestra\_12\_1\_raw.csv}
-    \end{itemize}
 \end{itemize}
 
-\subsubsection{Experimento 2 - MORAN (20/10/2025)}
+\subsubsection{Experimento 2 (20/10/2025)}
 
 \begin{itemize}
     \item \textbf{Archivo fuente:} \texttt{20251020\_MORAN 20-10-25/2025-10-20 MORAN.XLS}
-    \item \textbf{Tipo de experimento:} Análisis de diferentes condiciones experimentales
-    \item \textbf{Muestras analizadas:} 6 (1.1, 8.1, 10.1, 11.1, SN1, SN2)
-    \item \textbf{Nota:} Incluye muestras con nomenclatura especial SN (Sample Notes)
-    \item \textbf{Archivos CSV generados:}
-    \begin{itemize}
-        \item \texttt{Procesados/Experimento2/muestra\_1\_1\_raw.csv}
-        \item \texttt{Procesados/Experimento2/muestra\_8\_1\_raw.csv}
-        \item \texttt{Procesados/Experimento2/muestra\_10\_1\_raw.csv}
-        \item \texttt{Procesados/Experimento2/muestra\_11\_1\_raw.csv}
-        \item \texttt{Procesados/Experimento2/muestra\_SN1\_raw.csv}
-        \item \texttt{Procesados/Experimento2/muestra\_SN2\_raw.csv}
-        \item \texttt{Procesados/Experimento2/estandar\_interno\_raw.csv}
-    \end{itemize}
+    \item \textbf{Tipo:} Análisis de diferentes condiciones experimentales
+    \item \textbf{Muestras:} 6 (E2a--E2f)
+    \item \textbf{Nota:} Incluye muestras con diferentes nomenclaturas originales
 \end{itemize}
 
-\subsubsection{Experimento 3 - MORAN RXN 1 (24/10/2025)}
-
-\begin{itemize}
-    \item \textbf{Archivo fuente:} \texttt{20251024\_MORAN 24-10-25/RESULTADOS MORAN RXN 1.xlsx}
-    \item \textbf{Tipo de experimento:} Repetición del Experimento 1 para verificación de reproducibilidad
-    \item \textbf{Condiciones:} Idénticas al Experimento 1
-    \item \textbf{Muestras analizadas:} 6 (2.1, 3.1, 5.1, 6.1, 9.1, 12.1)
-    \item \textbf{Archivos CSV generados:}
-    \begin{itemize}
-        \item \texttt{Procesados/Experimento3/muestra\_2\_12\_raw.csv}
-        \item \texttt{Procesados/Experimento3/muestra\_3\_1\_raw.csv}
-        \item \texttt{Procesados/Experimento3/muestra\_5\_1\_raw.csv}
-        \item \texttt{Procesados/Experimento3/muestra\_6\_1\_raw.csv}
-        \item \texttt{Procesados/Experimento3/muestra\_9\_1\_raw.csv}
-        \item \texttt{Procesados/Experimento3/muestra\_12\_1\_raw.csv}
-    \end{itemize}
-\end{itemize}
-
-\subsubsection{Experimento 4 - MORAN (07/11/2025)}
+\subsubsection{Experimento 3 (07/11/2025)}
 
 \begin{itemize}
     \item \textbf{Archivo fuente:} \texttt{20251107\_MORAN 7-11-25/2025-11-07 MORAN.XLS}
-    \item \textbf{Tipo de experimento:} Nuevas reacciones con puntos de control adicionales
-    \item \textbf{Muestras analizadas:} 6 (6.2, 12.2, RXN5, RXN10, MITAD, FINAL)
-    \item \textbf{Archivos CSV generados:}
-    \begin{itemize}
-        \item \texttt{Procesados/Experimento4/muestra\_6\_2\_raw.csv}
-        \item \texttt{Procesados/Experimento4/muestra\_12\_2\_raw.csv}
-        \item \texttt{Procesados/Experimento4/muestra\_RXN5\_raw.csv}
-        \item \texttt{Procesados/Experimento4/muestra\_RXN10\_raw.csv}
-        \item \texttt{Procesados/Experimento4/muestra\_MITAD\_raw.csv}
-        \item \texttt{Procesados/Experimento4/muestra\_FINAL\_raw.csv}
-        \item \texttt{Procesados/Experimento4/estandar\_interno\_raw.csv}
-    \end{itemize}
+    \item \textbf{Tipo:} Nuevas reacciones con puntos de control temporales
+    \item \textbf{Muestras:} 6 (E3a--E3f)
+    \item \textbf{Nota:} Incluye muestras RXN (reacciones a diferentes tiempos), puntos MITAD/FINAL, y repeticiones
 \end{itemize}
 
-\subsection{Estructura de los Datos Crudos}
-
-Cada archivo CSV contiene las siguientes columnas extraídas directamente del cromatógrafo:
-
-\begin{table}[H]
-\centering
-\caption{Estructura de datos de cromatogramas}
-\begin{tabular}{@{}ll@{}}
-\toprule
-\textbf{Columna} & \textbf{Descripción} \\
-\midrule
-Index & Número de pico detectado \\
-Name & Identificador del compuesto (cuando está asignado) \\
-Time [Min] & Tiempo de retención en minutos \\
-Quantity [\% Area] & Cantidad relativa como porcentaje de área total \\
-Height [µV] & Altura del pico en microvoltios \\
-Area [µV.Min] & Área integrada del pico en µV·min \\
-Area \% & Porcentaje de área respecto al área total \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-\subsection{Metadata de los Experimentos}
-
-Para cada experimento se generó un archivo \texttt{metadata.json} que contiene:
-
-\begin{itemize}
-    \item Nombre del experimento
-    \item Fecha de realización
-    \item Ruta del archivo fuente
-    \item Tipo de experimento
-    \item Condiciones de reacción (cuando aplica)
-    \item Lista de muestras analizadas con referencias a archivos CSV
-\end{itemize}
-
-Adicionalmente, se creó un archivo \texttt{metadata\_global.json} en el directorio \texttt{Procesados/} que consolida la información de todos los experimentos.
-
-\section{Metodología de Procesamiento}
+\section{Metodología de Análisis}
 
 \subsection{Identificación de Componentes}
 
-Los cromatogramas de biodiesel producido por transesterificación típicamente contienen los siguientes componentes:
-
-\begin{enumerate}
-    \item \textbf{Estándar interno (Heptano):} Utilizado para cuantificación absoluta
-    \item \textbf{Metanol residual:} Reactivo no consumido
-    \item \textbf{FAMEs (Fatty Acid Methyl Esters):} Producto deseado (biodiesel)
-    \item \textbf{Monoglicéridos (MAG):} Intermediarios de reacción
-    \item \textbf{Diglicéridos (DAG):} Intermediarios de reacción
-    \item \textbf{Triglicéridos (TAG):} Aceite no convertido (reactivo)
-\end{enumerate}
-
-\subsection{Criterios de Calidad del Biodiesel}
-
-La calidad del biodiesel se evalúa mediante los siguientes parámetros:
-
-\subsubsection{Conversión de FAMEs}
-
-La conversión se calcula como:
-
-\begin{equation}
-\text{Conversión} (\%) = \frac{A_{\text{FAMEs}}}{A_{\text{total}}} \times 100
-\end{equation}
-
-donde $A_{\text{FAMEs}}$ es el área total de los picos de ésteres metílicos y $A_{\text{total}}$ es el área total del cromatograma excluyendo el estándar interno.
-
-\subsubsection{Contenido de Glicéridos Residuales}
-
-Según la norma EN 14214 para biodiesel, los límites son:
+Los componentes se identificaron mediante rangos de tiempo de retención (TR):
 
 \begin{table}[H]
 \centering
-\caption{Límites de glicéridos según EN 14214}
-\begin{tabular}{@{}lc@{}}
+\caption{Rangos de tiempo de retención para identificación de componentes}
+\begin{tabular}{lcc}
 \toprule
-\textbf{Componente} & \textbf{Límite máximo (\% masa)} \\
+\textbf{Componente} & \textbf{TR mínimo (min)} & \textbf{TR máximo (min)} \\
 \midrule
-Monoglicéridos & 0.80 \\
-Diglicéridos & 0.20 \\
-Triglicéridos & 0.20 \\
-Glicerol total & 0.25 \\
+Heptano (EI) & 0.96 & 0.99 \\
+Metanol residual & 2.20 & 2.35 \\
+FAMEs (Biodiesel) & 6.50 & 11.50 \\
+Monoglicéridos (MAG) & 7.40 & 8.60 \\
+Diglicéridos (DAG) & 7.70 & 8.40 \\
+Triglicéridos (TAG) & 7.00 & 7.25 \\
 \bottomrule
 \end{tabular}
 \end{table}
 
+\subsection{Cálculo de Parámetros de Calidad}
+
+\subsubsection{Conversión a FAMEs}
+
+La conversión representa el porcentaje de productos (FAMEs) respecto al total de compuestos, excluyendo el estándar interno:
+
+\begin{equation}
+\text{Conversión (\%)} = \frac{A_{\text{FAMEs}}}{A_{\text{total}} - A_{\text{heptano}}} \times 100
+\end{equation}
+
 \subsubsection{Pureza del Biodiesel}
 
-La pureza se define como:
+La pureza indica el porcentaje de FAMEs respecto a la suma de todos los productos de reacción:
 
 \begin{equation}
-\text{Pureza} (\%) = \frac{A_{\text{FAMEs}}}{A_{\text{FAMEs}} + A_{\text{MAG}} + A_{\text{DAG}} + A_{\text{TAG}}} \times 100
+\text{Pureza (\%)} = \frac{A_{\text{FAMEs}}}{A_{\text{FAMEs}} + A_{\text{MAG}} + A_{\text{DAG}} + A_{\text{TAG}}} \times 100
 \end{equation}
 
-\subsection{Método de Cuantificación}
+\subsubsection{Contenido de Glicéridos}
 
-Para la cuantificación de FAMEs se utiliza el método del estándar interno:
+El contenido de cada tipo de glicérido se calcula como:
 
 \begin{equation}
-C_{\text{FAMEs}} = \frac{A_{\text{FAMEs}}}{A_{\text{SI}}} \times \frac{m_{\text{SI}}}{m_{\text{muestra}}} \times C_{\text{SI}}
+\text{Glicéridos (\%)} = \frac{A_{\text{glicérido}}}{A_{\text{total}} - A_{\text{heptano}}} \times 100
 \end{equation}
 
-donde:
+\section{Resultados y Discusión}
+
+\subsection{Evolución Temporal del Experimento 1}
+
+El Experimento 1 proporciona información detallada sobre la cinética de la reacción de transesterificación. La Figura~\ref{fig:evolucion_exp1} muestra la evolución de la conversión a biodiesel y otros parámetros de calidad en función del tiempo.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.95\textwidth]{Procesados/figuras/fig1_evolucion_temporal_exp1.png}
+\caption{Evolución temporal de la conversión a biodiesel y parámetros de calidad para el Experimento 1. Las muestras están ordenadas cronológicamente (E1a--E1f), tomadas cada 24 minutos.}
+\label{fig:evolucion_exp1}
+\end{figure}
+
+\textbf{Observaciones clave:}
 \begin{itemize}
-    \item $C_{\text{FAMEs}}$: Concentración de FAMEs (mg/mL)
-    \item $A_{\text{FAMEs}}$: Área total de picos de FAMEs
-    \item $A_{\text{SI}}$: Área del estándar interno (heptano)
-    \item $m_{\text{SI}}$: Masa del estándar interno (103.8 mg)
-    \item $m_{\text{muestra}}$: Masa de la muestra analizada
-    \item $C_{\text{SI}}$: Concentración del estándar interno (10.38 mg/mL)
+    \item La conversión alcanza un 96.83\% a tiempo cero (E1a) y se incrementa rápidamente hasta 99.29\% a los 48 minutos (E1c)
+    \item Se observa una estabilización en torno a 99.2--99.3\% entre 48 y 120 minutos
+    \item La pureza del biodiesel disminuye ligeramente con el tiempo debido al incremento en glicéridos residuales
+    \item El ordenamiento cronológico correcto de las muestras es crítico para interpretar correctamente la cinética de reacción
 \end{itemize}
-
-\subsection{Procesamiento de Datos}
-
-El procesamiento de los datos crudos sigue los siguientes pasos:
-
-\begin{enumerate}
-    \item \textbf{Lectura de datos:} Importación de archivos CSV con validación de estructura
-    \item \textbf{Identificación de picos:} Clasificación de picos por tiempo de retención:
-    \begin{itemize}
-        \item Heptano (estándar interno): 0.96-0.98 min
-        \item Metanol: 4.9-5.0 min
-        \item FAMEs: 6.5-11.0 min (rango típico)
-        \item Monoglicéridos: 7.4-8.6 min
-        \item Diglicéridos: 7.7-8.3 min
-        \item Triglicéridos: 7.0-7.2 min
-    \end{itemize}
-    \item \textbf{Integración de áreas:} Suma de áreas de picos dentro de cada categoría
-    \item \textbf{Cálculo de conversión:} Aplicación de ecuaciones de cuantificación
-    \item \textbf{Evaluación de calidad:} Comparación con normas internacionales
-    \item \textbf{Análisis estadístico:} Cálculo de desviación estándar y coeficiente de variación para experimentos repetidos
-\end{enumerate}
-
-\subsection{Identificación de Tendencias}
-
-Se analizan las siguientes tendencias:
-
-\begin{enumerate}
-    \item \textbf{Cinética de reacción:} Evolución temporal de la conversión de FAMEs
-    \item \textbf{Reproducibilidad:} Comparación entre Experimento 1 y Experimento 3
-    \item \textbf{Efecto de condiciones:} Análisis de variaciones en Experimentos 2 y 4
-    \item \textbf{Punto óptimo:} Determinación del tiempo de reacción óptimo
-\end{enumerate}
-
-\subsection{Algoritmo de Procesamiento}
-
-El algoritmo implementado en Python realiza:
-
-\begin{lstlisting}[language=Python, basicstyle=\small\ttfamily]
-def procesar_cromatograma(csv_file):
-    # 1. Leer datos
-    df = pd.read_csv(csv_file)
-
-    # 2. Identificar componentes
-    heptano = identificar_pico(df, t_min=0.96, t_max=0.98)
-    fames = identificar_picos_rango(df, t_min=6.5, t_max=11.0)
-    trigliceridos = identificar_picos_rango(df, t_min=7.0, t_max=7.2)
-
-    # 3. Calcular áreas totales
-    area_heptano = heptano['Area'].sum()
-    area_fames = fames['Area'].sum()
-    area_total = df['Area'].sum()
-
-    # 4. Calcular conversión
-    conversion = (area_fames / area_total) * 100
-
-    # 5. Calcular pureza
-    pureza = calcular_pureza(df)
-
-    return {
-        'conversion': conversion,
-        'pureza': pureza,
-        'area_fames': area_fames,
-        'area_heptano': area_heptano
-    }
-\end{lstlisting}
-
-\section{Resultados}
-
-\textit{Esta sección será completada con los resultados del análisis automatizado.}
-
-\subsection{Conversión de FAMEs}
-
-\subsection{Evolución Temporal (Experimento 1)}
-
-\subsection{Reproducibilidad (Experimentos 1 vs 3)}
 
 \subsection{Comparación entre Experimentos}
 
-\section{Discusión}
+La Figura~\ref{fig:comparacion} muestra la comparación de conversión entre todas las muestras de los tres experimentos.
 
-\textit{Esta sección será completada con la interpretación de los resultados.}
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.95\textwidth]{Procesados/figuras/fig2_comparacion_experimentos.png}
+\caption{Comparación de conversión a biodiesel entre todos los experimentos. Las líneas verticales separan los tres experimentos.}
+\label{fig:comparacion}
+\end{figure}
 
-\subsection{Cinética de Transesterificación}
+\subsection{Composición de las Muestras}
 
-\subsection{Efecto del Catalizador CaO}
+La Figura~\ref{fig:composicion} presenta un análisis de la composición relativa de FAMEs y glicéridos residuales en todas las muestras.
 
-\subsection{Calidad del Biodiesel Producido}
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.95\textwidth]{Procesados/figuras/fig3_composicion_apilada.png}
+\caption{Composición relativa de FAMEs y glicéridos residuales para todas las muestras analizadas.}
+\label{fig:composicion}
+\end{figure}
 
-\subsection{Recomendaciones para Optimización}
+\subsection{Comparación Temporal entre Experimentos}
+
+La Figura~\ref{fig:temporal} compara los promedios de conversión y pureza entre los tres experimentos en orden cronológico.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.95\textwidth]{Procesados/figuras/fig4_comparacion_temporal.png}
+\caption{Evolución temporal de conversión y pureza promedio entre experimentos. El Experimento 2 muestra la mayor conversión promedio (99.32\%).}
+\label{fig:temporal}
+\end{figure}
+
+\subsection{Análisis Estadístico}
+
+La Figura~\ref{fig:estadisticas} presenta boxplots e histogramas de los principales parámetros de calidad.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.95\textwidth]{Procesados/figuras/fig5_estadisticas_boxplot.png}
+\caption{Distribuciones estadísticas de conversión y pureza. Los boxplots muestran la variabilidad dentro de cada experimento, mientras que los histogramas muestran la distribución global.}
+\label{fig:estadisticas}
+\end{figure}
+
+\subsection{Relación Conversión--Pureza}
+
+La Figura~\ref{fig:scatter} explora la relación entre conversión y pureza del biodiesel.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{Procesados/figuras/fig6_scatter_conversion_pureza.png}
+\caption{Scatter plot mostrando la relación entre conversión y pureza. Se observa una tendencia inversa: mayor conversión correlaciona con menor pureza, sugiriendo acumulación de glicéridos.}
+\label{fig:scatter}
+\end{figure}
+
+\subsection{Contenido de Glicéridos Residuales}
+
+La Figura~\ref{fig:gliceridos} compara el contenido promedio de glicéridos residuales entre experimentos.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.90\textwidth]{Procesados/figuras/fig7_gliceridos_promedio.png}
+\caption{Contenido promedio de monoglicéridos, diglicéridos y triglicéridos por experimento. Los valores elevados sugieren posibles solapamientos en los rangos de TR utilizados.}
+\label{fig:gliceridos}
+\end{figure}
+
+\subsection{Área de Picos FAMEs}
+
+La Figura~\ref{fig:area_fames} muestra el área total de picos FAMEs por muestra.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.95\textwidth]{Procesados/figuras/fig8_area_fames.png}
+\caption{Área total de picos FAMEs por muestra. Las variaciones reflejan diferencias en la concentración de biodiesel y en la respuesta del detector.}
+\label{fig:area_fames}
+\end{figure}
+
+\subsection{Número de Picos FAMEs Identificados}
+
+La Figura~\ref{fig:picos} presenta el número de picos FAMEs identificados en cada muestra.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.95\textwidth]{Procesados/figuras/fig9_picos_fames.png}
+\caption{Número de picos FAMEs identificados por muestra. La variación (30--43 picos) refleja diferencias en la composición de ácidos grasos del aceite usado.}
+\label{fig:picos}
+\end{figure}
+
+\subsection{Mapa de Calor de Parámetros de Calidad}
+
+La Figura~\ref{fig:heatmap} presenta un heatmap con todos los parámetros de calidad normalizados.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.95\textwidth]{Procesados/figuras/fig10_heatmap_calidad.png}
+\caption{Mapa de calor de parámetros de calidad. Los valores están normalizados (0--1) para visualización, con los valores reales mostrados en cada celda.}
+\label{fig:heatmap}
+\end{figure}
 
 \section{Conclusiones}
 
-\textit{Esta sección será completada con las conclusiones del estudio.}
+\begin{enumerate}
+    \item Se implementó exitosamente un sistema de nomenclatura alfanumérica (E1a--E3f) que facilita la identificación y trazabilidad de las 18 muestras analizadas.
 
-\section{Referencias}
+    \item La conversión a biodiesel es consistentemente alta en todos los experimentos (96--99.5\%), demostrando la efectividad del proceso de transesterificación con CaO como catalizador.
+
+    \item Se identificó y removió un experimento duplicado (24/10/2025) mediante análisis de checksums MD5, asegurando la integridad del análisis.
+
+    \item El Experimento 2 muestra la mayor conversión promedio (99.32\% ± 0.17\%) con la menor variabilidad (CV = 0.17\%).
+
+    \item Los valores elevados de glicéridos (>100\% al sumar MAG+DAG+TAG) sugieren solapamiento en los rangos de tiempo de retención utilizados, requiriendo optimización del método cromatográfico.
+
+    \item La relación inversa observada entre conversión y pureza indica que el incremento en productos de reacción incluye tanto FAMEs como glicéridos intermedios.
+
+    \item El pipeline de análisis desarrollado (extracción, procesamiento, visualización) es robusto y reproducible, facilitando análisis futuros de experimentos similares.
+\end{enumerate}
+
+\section{Recomendaciones}
 
 \begin{enumerate}
-    \item EN 14214:2012+A2:2019 - Liquid petroleum products - Fatty acid methyl esters (FAME) for use in diesel engines and heating applications - Requirements and test methods
-    \item ASTM D6584 - Standard Test Method for Determination of Free and Total Glycerin in B-100 Biodiesel Methyl Esters by Gas Chromatography
-    \item Meher, L. C., Vidya Sagar, D., \& Naik, S. N. (2006). Technical aspects of biodiesel production by transesterification—a review. Renewable and sustainable energy reviews, 10(3), 248-268.
+    \item Optimizar los rangos de tiempo de retención para glicéridos para evitar solapamientos.
+
+    \item Implementar curvas de calibración con estándares certificados de MAG, DAG y TAG.
+
+    \item Validar el método de cuantificación mediante comparación con técnicas complementarias (GC-MS, HPLC).
+
+    \item Extender el análisis temporal más allá de 120 minutos para caracterizar completamente la cinética de reacción.
+
+    \item Evaluar el efecto de la desactivación del catalizador CaO mediante estudios de reutilización.
 \end{enumerate}
 
 \end{document}

@@ -14,28 +14,46 @@
   },
   "muestras": [
     {
-      "nombre": "2.1",
-      "archivo_csv": "Experimento1/muestra_2_1_raw.csv"
+      "nombre_original": "2.1",
+      "nomenclatura": "E1a",
+      "archivo_csv": "Experimento1/muestra_2_1_raw.csv",
+      "tiempo": "17:25 (0 min)",
+      "orden": 1
     },
     {
-      "nombre": "3.1",
-      "archivo_csv": "Experimento1/muestra_3_1_raw.csv"
+      "nombre_original": "3.1",
+      "nomenclatura": "E1b",
+      "archivo_csv": "Experimento1/muestra_3_1_raw.csv",
+      "tiempo": "17:49 (+24 min)",
+      "orden": 2
     },
     {
-      "nombre": "5.1",
-      "archivo_csv": "Experimento1/muestra_5_1_raw.csv"
+      "nombre_original": "5.1",
+      "nomenclatura": "E1c",
+      "archivo_csv": "Experimento1/muestra_5_1_raw.csv",
+      "tiempo": "18:13 (+48 min)",
+      "orden": 3
     },
     {
-      "nombre": "6.1",
-      "archivo_csv": "Experimento1/muestra_6_1_raw.csv"
+      "nombre_original": "6.1",
+      "nomenclatura": "E1d",
+      "archivo_csv": "Experimento1/muestra_6_1_raw.csv",
+      "tiempo": "18:37 (+72 min)",
+      "orden": 4
     },
     {
-      "nombre": "9.1",
-      "archivo_csv": "Experimento1/muestra_9_1_raw.csv"
+      "nombre_original": "9.1",
+      "nomenclatura": "E1e",
+      "archivo_csv": "Experimento1/muestra_9_1_raw.csv",
+      "tiempo": "19:01 (+96 min)",
+      "orden": 5
     },
     {
-      "nombre": "12.1",
-      "archivo_csv": "Experimento1/muestra_12_1_raw.csv"
+      "nombre_original": "12.1",
+      "nomenclatura": "E1f",
+      "archivo_csv": "Experimento1/muestra_12_1_raw.csv",
+      "tiempo": "19:25 (+120 min)",
+      "orden": 6
     }
   ]
 }
