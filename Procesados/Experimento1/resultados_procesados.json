@@ -3,7 +3,7 @@
   "fecha": "2025-10-03",
   "muestras": [
     {
-      "nombre": "12_1",
+      "nombre": "E1f",
       "archivo": "/home/user/ExperimentosBiodiesel_row/Procesados/Experimento1/muestra_12_1_raw.csv",
       "conversion_fames_pct": 99.23223370022758,
       "pureza_biodiesel_pct": 35.40058906303959,
@@ -15,10 +15,12 @@
       "area_heptano": 2378179.9,
       "area_fames": 1802724.7999999998,
       "num_picos_total": 53,
-      "num_picos_fames": 39
+      "num_picos_fames": 39,
+      "nombre_original": "12_1",
+      "orden": 6
     },
     {
-      "nombre": "2_1",
+      "nombre": "E1a",
       "archivo": "/home/user/ExperimentosBiodiesel_row/Procesados/Experimento1/muestra_2_1_raw.csv",
       "conversion_fames_pct": 96.8308234807766,
       "pureza_biodiesel_pct": 41.5148588256405,
@@ -30,10 +32,12 @@
       "area_heptano": 3535901.2,
       "area_fames": 282947.80000000016,
       "num_picos_total": 55,
-      "num_picos_fames": 39
+      "num_picos_fames": 39,
+      "nombre_original": "2_1",
+      "orden": 1
     },
     {
-      "nombre": "3_1",
+      "nombre": "E1b",
       "archivo": "/home/user/ExperimentosBiodiesel_row/Procesados/Experimento1/muestra_3_1_raw.csv",
       "conversion_fames_pct": 98.01320787185172,
       "pureza_biodiesel_pct": 37.97426891280163,
@@ -45,10 +49,12 @@
       "area_heptano": 2631704.3,
       "area_fames": 471607.80000000005,
       "num_picos_total": 55,
-      "num_picos_fames": 41
+      "num_picos_fames": 41,
+      "nombre_original": "3_1",
+      "orden": 2
     },
     {
-      "nombre": "5_1",
+      "nombre": "E1c",
       "archivo": "/home/user/ExperimentosBiodiesel_row/Procesados/Experimento1/muestra_5_1_raw.csv",
       "conversion_fames_pct": 99.28933955477045,
       "pureza_biodiesel_pct": 35.34481422808244,
@@ -60,10 +66,12 @@
       "area_heptano": 1882359.4,
       "area_fames": 2230802.3,
       "num_picos_total": 50,
-      "num_picos_fames": 34
+      "num_picos_fames": 34,
+      "nombre_original": "5_1",
+      "orden": 3
     },
     {
-      "nombre": "6_1",
+      "nombre": "E1d",
       "archivo": "/home/user/ExperimentosBiodiesel_row/Procesados/Experimento1/muestra_6_1_raw.csv",
       "conversion_fames_pct": 99.33281943688523,
       "pureza_biodiesel_pct": 35.251432660656725,
@@ -75,10 +83,12 @@
       "area_heptano": 2547359.1,
       "area_fames": 1983319.7000000002,
       "num_picos_total": 50,
-      "num_picos_fames": 34
+      "num_picos_fames": 34,
+      "nombre_original": "6_1",
+      "orden": 4
     },
     {
-      "nombre": "9_1",
+      "nombre": "E1e",
       "archivo": "/home/user/ExperimentosBiodiesel_row/Procesados/Experimento1/muestra_9_1_raw.csv",
       "conversion_fames_pct": 99.21028839609518,
       "pureza_biodiesel_pct": 35.330133047545665,
@@ -90,7 +100,9 @@
       "area_heptano": 2687147.7,
       "area_fames": 1855608.4000000001,
       "num_picos_total": 51,
-      "num_picos_fames": 35
+      "num_picos_fames": 35,
+      "nombre_original": "9_1",
+      "orden": 5
     }
   ],
   "estadisticas": {

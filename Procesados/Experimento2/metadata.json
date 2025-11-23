@@ -1,32 +1,44 @@
 {
-  "experimento": "MORAN Experimento 1",
+  "experimento": "Experimento 2",
   "fecha": "2025-10-20",
   "fuente": "/home/user/ExperimentosBiodiesel_row/20251020_MORAN 20-10-25/2025-10-20 MORAN.XLS",
   "tipo": "Análisis de diferentes condiciones",
   "muestras": [
     {
-      "nombre": "1.1",
-      "archivo_csv": "Experimento2/muestra_1_1_raw.csv"
+      "nombre_original": "1.1",
+      "nomenclatura": "E2a",
+      "archivo_csv": "Experimento2/muestra_1_1_raw.csv",
+      "orden": 1
     },
     {
-      "nombre": "8.1",
-      "archivo_csv": "Experimento2/muestra_8_1_raw.csv"
+      "nombre_original": "8.1",
+      "nomenclatura": "E2b",
+      "archivo_csv": "Experimento2/muestra_8_1_raw.csv",
+      "orden": 2
     },
     {
-      "nombre": "10.1",
-      "archivo_csv": "Experimento2/muestra_10_1_raw.csv"
+      "nombre_original": "10.1",
+      "nomenclatura": "E2c",
+      "archivo_csv": "Experimento2/muestra_10_1_raw.csv",
+      "orden": 3
     },
     {
-      "nombre": "11.1",
-      "archivo_csv": "Experimento2/muestra_11_1_raw.csv"
+      "nombre_original": "11.1",
+      "nomenclatura": "E2d",
+      "archivo_csv": "Experimento2/muestra_11_1_raw.csv",
+      "orden": 4
     },
     {
-      "nombre": "SN1",
-      "archivo_csv": "Experimento2/muestra_SN1_raw.csv"
+      "nombre_original": "SN1",
+      "nomenclatura": "E2e",
+      "archivo_csv": "Experimento2/muestra_SN1_raw.csv",
+      "orden": 5
     },
     {
-      "nombre": "SN2",
-      "archivo_csv": "Experimento2/muestra_SN2_raw.csv"
+      "nombre_original": "SN2",
+      "nomenclatura": "E2f",
+      "archivo_csv": "Experimento2/muestra_SN2_raw.csv",
+      "orden": 6
     }
   ]
 }

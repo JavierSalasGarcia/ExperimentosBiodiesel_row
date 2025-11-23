@@ -176,15 +176,36 @@ class ProcesadorCromatogramas:
             'muestras': []
         }
 
+        # Crear mapeo de archivos CSV a nomenclatura
+        nomenclatura_map = {}
+        for muestra_info in metadata.get('muestras', []):
+            archivo_csv = muestra_info.get('archivo_csv', '')
+            nombre_archivo = Path(archivo_csv).stem.replace('muestra_', '').replace('_raw', '')
+            nomenclatura_map[nombre_archivo] = {
+                'nomenclatura': muestra_info.get('nomenclatura', nombre_archivo),
+                'orden': muestra_info.get('orden', 0)
+            }
+
         # Procesar cada muestra
         csv_files = sorted(exp_path.glob('muestra_*_raw.csv'))
 
         for csv_file in csv_files:
-            nombre = csv_file.stem.replace('muestra_', '').replace('_raw', '')
-            print(f"  Procesando {nombre}...")
+            nombre_archivo = csv_file.stem.replace('muestra_', '').replace('_raw', '')
 
-            resultado = self.procesar_muestra(csv_file, nombre)
+            # Obtener nomenclatura actualizada
+            if nombre_archivo in nomenclatura_map:
+                nomenclatura = nomenclatura_map[nombre_archivo]['nomenclatura']
+                orden = nomenclatura_map[nombre_archivo]['orden']
+            else:
+                nomenclatura = nombre_archivo
+                orden = 0
+
+            print(f"  Procesando {nombre_archivo} → {nomenclatura}...")
+
+            resultado = self.procesar_muestra(csv_file, nomenclatura)
             if resultado:
+                resultado['nombre_original'] = nombre_archivo
+                resultado['orden'] = orden
                 resultados_exp['muestras'].append(resultado)
 
         # Calcular estadísticas del experimento
@@ -240,6 +261,8 @@ class ProcesadorCromatogramas:
                     'Experimento': exp_name,
                     'Fecha': exp_data['fecha'],
                     'Muestra': muestra['nombre'],
+                    'Nombre_Original': muestra.get('nombre_original', muestra['nombre']),
+                    'Orden': muestra.get('orden', 0),
                     'Conversión FAMEs (%)': round(muestra['conversion_fames_pct'], 2),
                     'Pureza (%)': round(muestra['pureza_biodiesel_pct'], 2),
                     'Monoglicéridos (%)': round(muestra['gliceridos']['monogliceridos_pct'], 2),
@@ -250,6 +273,9 @@ class ProcesadorCromatogramas:
                 })
 
         df = pd.DataFrame(data)
+
+        # Ordenar por Experimento y Orden
+        df = df.sort_values(['Experimento', 'Orden'])
 
         # Guardar tabla CSV
         tabla_file = self.procesados_dir / 'tabla_resumen.csv'
