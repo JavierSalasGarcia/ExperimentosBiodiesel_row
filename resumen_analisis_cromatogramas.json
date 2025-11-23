@@ -1,0 +1,203 @@
+{
+  "total_experimentos": 4,
+  "total_muestras": 24,
+  "periodo": "03/10/2025 - 07/11/2025",
+  "experimentos": {
+    "Experimento_1": {
+      "fecha": "2025-10-03",
+      "nombre": "Experimento 1 (Primer experimento de transesterificación)",
+      "directorio": "Experimento1",
+      "condiciones": {
+        "aceite_ml": 100,
+        "aceite_g": 91.53,
+        "metanol_ml": 25.51,
+        "catalizador": "CaO",
+        "porcentaje_catalizador": "1%",
+        "temperatura": "50-55°C",
+        "rpm": "100-600",
+        "duracion": "2 horas",
+        "relacion_molar": "6:1"
+      },
+      "muestras": [
+        {
+          "nombre": "2.1",
+          "tiempo": "17:25 (0 min)",
+          "tipo": "Inicio de reacción"
+        },
+        {
+          "nombre": "3.1",
+          "tiempo": "17:49 (+24 min)",
+          "tipo": "Muestreo intermedio"
+        },
+        {
+          "nombre": "5.1",
+          "tiempo": "18:13 (+48 min)",
+          "tipo": "Muestreo intermedio"
+        },
+        {
+          "nombre": "6.1",
+          "tiempo": "18:37 (+72 min)",
+          "tipo": "Muestreo intermedio"
+        },
+        {
+          "nombre": "9.1",
+          "tiempo": "19:01 (+96 min)",
+          "tipo": "Muestreo intermedio"
+        },
+        {
+          "nombre": "12.1",
+          "tiempo": "19:25 (+120 min)",
+          "tipo": "Final de reacción"
+        }
+      ],
+      "archivos_excel": "Experimento1/Cromatograma/cromatogramaExperimento1.xlsx",
+      "archivos_pdf": [
+        "Experimento1/Cromatograma/STD.pdf",
+        "Experimento1/Cromatograma/2.1.pdf",
+        "Experimento1/Cromatograma/3.1.pdf",
+        "Experimento1/Cromatograma/5.1.pdf",
+        "Experimento1/Cromatograma/6.1.pdf",
+        "Experimento1/Cromatograma/9.1.pdf",
+        "Experimento1/Cromatograma/12.1.pdf"
+      ]
+    },
+    "MORAN_20Oct2025": {
+      "fecha": "2025-10-20",
+      "nombre": "MORAN Experimento 1 (20 de octubre)",
+      "directorio": "20251020_MORAN 20-10-25",
+      "condiciones": {
+        "tipo": "Análisis de diferentes condiciones/muestras",
+        "nota": "Diferentes muestras con nomenclatura SN (Sample Note)"
+      },
+      "muestras": [
+        {
+          "nombre": "1.1",
+          "tipo": "Muestra experimental",
+          "conversion": "96.07%"
+        },
+        {
+          "nombre": "8.1",
+          "tipo": "Muestra experimental",
+          "conversion": "55.83%"
+        },
+        {
+          "nombre": "10.1",
+          "tipo": "Muestra experimental",
+          "conversion": "79.76%"
+        },
+        {
+          "nombre": "11.1",
+          "tipo": "Muestra experimental",
+          "conversion": "59.39%"
+        },
+        {
+          "nombre": "SN1",
+          "tipo": "Sample Note 1",
+          "conversion": "64.24%"
+        },
+        {
+          "nombre": "SN2",
+          "tipo": "Sample Note 2",
+          "conversion": "76.90%"
+        }
+      ],
+      "archivos_excel": "20251020_MORAN 20-10-25/2025-10-20 MORAN.XLS",
+      "archivos_pdf": [
+        "20251020_MORAN 20-10-25/1.1.pdf",
+        "20251020_MORAN 20-10-25/8.1.pdf",
+        "20251020_MORAN 20-10-25/10.1.pdf",
+        "20251020_MORAN 20-10-25/11.1.pdf",
+        "20251020_MORAN 20-10-25/SN1.pdf",
+        "20251020_MORAN 20-10-25/SN2.pdf"
+      ]
+    },
+    "MORAN_24Oct2025": {
+      "fecha": "2025-10-24",
+      "nombre": "MORAN RXN 1 (24 de octubre - Repetición del Experimento 1)",
+      "directorio": "20251024_MORAN 24-10-25",
+      "condiciones": {
+        "tipo": "Repetición del Experimento 1",
+        "nota": "Mismas muestras que Experimento 1 para verificar reproducibilidad"
+      },
+      "muestras": [
+        {
+          "nombre": "2.1",
+          "tipo": "Inicio de reacción"
+        },
+        {
+          "nombre": "3.1",
+          "tipo": "Muestreo intermedio"
+        },
+        {
+          "nombre": "5.1",
+          "tipo": "Muestreo intermedio"
+        },
+        {
+          "nombre": "6.1",
+          "tipo": "Muestreo intermedio"
+        },
+        {
+          "nombre": "9.1",
+          "tipo": "Muestreo intermedio"
+        },
+        {
+          "nombre": "12.1",
+          "tipo": "Final de reacción"
+        }
+      ],
+      "archivos_excel": "20251024_MORAN 24-10-25/RESULTADOS MORAN RXN 1.xlsx",
+      "archivos_pdf": [
+        "20251024_MORAN 24-10-25/2.1.pdf",
+        "20251024_MORAN 24-10-25/3.1.pdf",
+        "20251024_MORAN 24-10-25/5.1.pdf",
+        "20251024_MORAN 24-10-25/6.1.pdf",
+        "20251024_MORAN 24-10-25/9.1.pdf",
+        "20251024_MORAN 24-10-25/12.1.pdf"
+      ]
+    },
+    "MORAN_07Nov2025": {
+      "fecha": "2025-11-07",
+      "nombre": "MORAN Experimento 2 (7 de noviembre)",
+      "directorio": "20251107_MORAN 7-11-25",
+      "condiciones": {
+        "tipo": "Experimento con diferentes puntos de muestreo",
+        "nota": "Incluye muestras repetidas (6.2, 12.2) y nuevas reacciones (RXN 5, RXN 10, MITAD, FINAL)"
+      },
+      "muestras": [
+        {
+          "nombre": "6.2",
+          "tipo": "Repetición de muestra 6"
+        },
+        {
+          "nombre": "12.2",
+          "tipo": "Repetición de muestra 12"
+        },
+        {
+          "nombre": "RXN 5 (5)",
+          "tipo": "Reacción 5 - tiempo intermedio"
+        },
+        {
+          "nombre": "RXN 10 (10)",
+          "tipo": "Reacción 10 - tiempo avanzado"
+        },
+        {
+          "nombre": "MITAD",
+          "tipo": "Punto medio del experimento"
+        },
+        {
+          "nombre": "FINAL",
+          "tipo": "Punto final del experimento"
+        }
+      ],
+      "archivos_excel": "20251107_MORAN 7-11-25/2025-11-07 MORAN.XLS",
+      "archivos_pdf": [
+        "20251107_MORAN 7-11-25/6.2.pdf",
+        "20251107_MORAN 7-11-25/12.2.pdf",
+        "20251107_MORAN 7-11-25/RXN 5 (7-11-25).pdf",
+        "20251107_MORAN 7-11-25/RXN 10 (7-11-25).pdf",
+        "20251107_MORAN 7-11-25/MITAD (7-11-25).pdf",
+        "20251107_MORAN 7-11-25/FINAL (7-11-25).pdf"
+      ]
+    }
+  }
+}
